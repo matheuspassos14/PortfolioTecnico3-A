@@ -1,0 +1,20 @@
+public class Loja {
+
+    public static void main(String[] args) {
+        Banco.criar_tabela("cliente", "id int primary key", "endereco", "telefone", "cpf");
+        Cliente c = new Cliente(1, "Rua José Jorge", "(48)99734-2349", "691.335.739.72");
+        Banco.salvar(c);
+        Cliente c1 = new Cliente(2, "Rua Jorge José", "(48)98402-4159", "120.505.119-81");
+        Banco.salvar(c1);
+
+        Banco.criar_tabela("produto", "cod_produto int primary key", "descricao", "qtd", "preco");
+        Produto p = new Produto("7899563251508", "óleo para cabelo", "1", "25.00");
+        Banco.salvar(p);
+        Produto p1 = new Produto("7908016666131", "hidratante", "1", "40.00");
+        Banco.salvar(p1);
+    }
+
+    Banco.visualiza_dados("cliente", "id", "endereco", "telefone", "cpf");
+    Banco.visualiza_dados("produto", "cod_produto", "descricao", "qtd", "preco")
+
+    }
